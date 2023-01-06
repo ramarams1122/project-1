@@ -1,3 +1,7 @@
+const searchBtn = document.getElementById('search');
+
+searchBtn.addEventListener('click', getRecipes);
+
 function getRecipes(query) {
     $.ajax({
         url: "https://api.spoonacular.com/recipes/search?apiKey=d03a24375b30427a863ee13274b2ca29&number=6&query=" + query,
