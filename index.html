@@ -13,7 +13,7 @@
 </head>
 <body>
   <!-- search bar from html1 to be linked to js -->
-  <input id="search"><button>Search</button>
+  <!-- <input id="search"><button>Search</button> -->
   <div id="output"></div>
   <a href="sourceLink"></a>
   
@@ -40,7 +40,7 @@
         <!-- created empty div elements for search query on recipes-->
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit" id="search"onclick="getrecepe(document.getElementById('search').value)">Search</button>
         </form>
         <div class="card">
             <img src="..." class="card-img-top" alt="...">
