@@ -36,13 +36,31 @@
     
     <main>
       <div class="container" id="container">
-
         <!-- created empty div elements for search query on recipes-->
-        <form class="d-flex" role="search">
+        <!-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+            <button class="btn btn-outline-success" type="submit" id="search">Search</button> -->
             <!-- <button class="btn btn-outline-success" type="submit" id="search"onclick="getrecepe(document.getElementById('search').value)">Search</button> -->
-        </form>
+        <!-- </form> -->
+        
+        <!-- Jason started from here for search btn to work -->
+          <div class = "meal-wrapper">
+              <div class = "meal-search">
+                  <h2 class = "title">Find Meals for Your Ingredients</h2>
+                  <div class = "meal-search-box">
+                      <input type = "text" class = "search-control" 
+                      placeholder="Enter an ingredient" id = "search-input">
+                      <button type = "submit" class = "search-btn btn" id="search-btn">
+                          <i class="fas fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+
+              <div class="meal-result">
+                <h2 class="title">Your Search Results: </h2>
+                <div id="meal"></div>
+              </div>
+
         <div class="card">
             <img src="..." class="card-img-top" alt="...">
 
