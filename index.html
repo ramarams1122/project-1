@@ -20,30 +20,20 @@
   <!--created header element for site name -->
   <header class="header" id="header">
     <h1 class="title" id="title">Whats To Eat</h1>
-    
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Weather modal</button>
-    
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-        </div>
-        </div>
-    </header>
+  </header>
     
     <main>
       <div class="container" id="container">
 
         <!-- created empty div elements for search query on recipes-->
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+        <div class ="recipe-search">
+          <h2 class="search-ing">Input Ingredients</h2>
+          <form class="d-flex" role="search">
+             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="search">Search</button>
             <!-- <button class="btn btn-outline-success" type="submit" id="search"onclick="getrecepe(document.getElementById('search').value)">Search</button> -->
-        </form>
+          </form>
+       </div>
         <div class="card">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
 
@@ -76,6 +66,21 @@
         </div>
         <!-- created footer class to include contact details-->
     </main>
+    <section>
+          
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Weather modal</button>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+        </div>
+        </div>
+    </section>
     
     <footer class="footer" id="footer">
         <div>
