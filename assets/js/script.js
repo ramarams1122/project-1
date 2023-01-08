@@ -123,3 +123,27 @@ function getRecipes() {
     })
 }
 
+function openModalAndShowData(modalid, apiUrl) {
+    // Get a reference to the modal element
+    const modal = document.getElementById("weatherModal");
+    
+    // Show the modal
+    $(modal).modal("show");
+    
+    // Get the data from the API
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Get a reference to the element where you want to display the data
+        const weatherContainer = modal.querySelector(".weather-content");
+    
+        // Clear any existing content in the data container
+        weatherContainer.innerHTML = "";
+    
+        // Append the data to the data container
+        weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${data.main.temp}</p>`;
+      });
+  }
+  
+  openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
+  
