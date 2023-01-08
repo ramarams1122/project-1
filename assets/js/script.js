@@ -99,10 +99,7 @@ function getRecipes() {
                         </div>
                         <div class="meal-img">
                            <img id="image-element"/>
-                           <script>
-                                var imageUrl = 'https://spoonacular.com/productImages/${results.id}-636x393.jpg';
-                           </script>
-                           <img src = "imageUrl" alt="food">
+                           <img src = "https://spoonacular.com/recipeImages/${results.id}-480x360.jpg" alt="food">
                         </div>
                         <div class="meal-name">
                             <h3>Time: ${results.readyInMinutes} minutes</h3>
