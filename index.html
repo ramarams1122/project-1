@@ -20,20 +20,8 @@
   <!--created header element for site name -->
   <header class="header" id="header">
     <h1 class="title" id="title">Whats To Eat</h1>
-    
-    <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Weather modal</button>
-    
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-        </div>
-        </div>
-    </header>
+
+  </header>
     
     <main>
       <div class="container" id="container">
@@ -91,9 +79,27 @@
           </div>
 
         </div>
-        <!-- created footer class to include contact details-->
+        
+       <!-- Trigger/Open The Modal -->
+    <!-- Modal -->
+  <div class="modal fade" id="weatherModal" tabindex="-1" role="dialog" aria-labelledby="weatherModalLabel" aria-hidden="true"> 
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+        <div class="modal-header">
+           <h5 class="modal-title" id="weatherModalLabel">Weather</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="weather-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     </main>
-    
+    <!-- created footer class to include contact details-->
     <footer class="footer" id="footer">
         <div>
             <ol>
