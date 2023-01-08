@@ -66,27 +66,69 @@ function displaySearchResults(results) {
 
 
 
-function openModalAndShowData(modalid, apiUrl) {
+// function openModalAndShowData(modalid, apiUrl) {
+//     // Get a reference to the modal element
+//     const modal = document.getElementById("weatherModal");
+    
+//     // Show the modal
+//     $(modal).modal("show");
+    
+//     // Get the data from the API
+//     fetch(apiUrl)
+//       .then(response => response.json())
+//       .then(data => {
+//         // Get a reference to the element where you want to display the data
+//         const weatherContainer = modal.querySelector(".weather-content");
+    
+//         // Clear any existing content in the data container
+//         weatherContainer.innerHTML = "";
+    
+//         // Append the data to the data container
+//         weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${data.main.temp}</p>`;
+//      });
+// }
+  
+// openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
+
+function openModalAndShowData(modalId, apiUrl) {
     // Get a reference to the modal element
-    const modal = document.getElementById("weatherModal");
+    const modal = document.getElementById(modalId);
     
     // Show the modal
-    $(modal).modal("show");
+    modal.style.display = "block";
     
     // Get the data from the API
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
         // Get a reference to the element where you want to display the data
-        const weatherContainer = modal.querySelector(".weather-content");
+        var weatherContainer = modal.querySelector(".weather-content");
     
         // Clear any existing content in the data container
         weatherContainer.innerHTML = "";
+
+        // Convert the temperature from kelvin to degrees Celsius
+        var tempInCelsius = data.main.temp - 273.15;
     
         // Append the data to the data container
-        weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${data.main.temp}</p>`;
-     });
-}
+        weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${tempInCelsius.toFixed(1)}°C</p>`;
+      });
+  }
   
-openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
-
+  openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
+  
+  // Close the modal when the close button is clicked
+  var closeButtons = document.querySelectorAll(".close");
+  closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  });
+  
+  // Close the modal when the user clicks outside of the modal
+  window.addEventListener("click", event => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+  
