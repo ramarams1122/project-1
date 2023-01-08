@@ -1,86 +1,7 @@
 const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
-// const imageFile = results.data;
-// const imageElement = document.getElementById('meal-image');
-// const reader = new FileReader();
-
 
 searchBtn.addEventListener('click', getRecipes);
-
-// function getRecipes(query) {
-//     $.ajax({
-//         url: "https://api.spoonacular.com/recipes/search?apiKey=d03a24375b30427a863ee13274b2ca29&number=6&query=" + query,
-//         success: function(res) {
-            
-//             // Clear the output element
-//              document.getElementById("output").innerHTML = "";
-             
-//              // Loop through the results and create a div for each recipe
-//              for (let i = 0; i < res.results.length; i++) {
-//                 let recipe = res.results[i];
-//                 let recipeDiv = document.createElement("div");
-//                 recipeDiv.innerHTML = "<h1>" + recipe.title + "</h1><br><img src='" + res.baseUri + recipe.image + "' width='400'/><br> ready in " + recipe.readyInMinutes + " minutes" + "<br><a href='" + recipe.sourceUrl +"'>Link to recipe</a>";
-//                 document.getElementById("output").appendChild(recipeDiv);
-//             }
-//         }
-//     });
-// }
-
-// $(document).ready(function() {
-//     const searchBtn = document.getElementById('search');
-  
-//     searchBtn.addEventListener('click', function getRecipe(query) {
-//       console.log("button clicked");
-  
-//       $.ajax({
-//         url: "https://api.spoonacular.com/recipes/search?apiKey=d03a24375b30427a863ee13274b2ca29&number=6&query=" + query,
-//         success: function(res) {
-//           // Clear the output element
-//           document.getElementById("output").innerHTML = "";
-  
-//           // Loop through the results and create a div for each recipe
-//           for (let i = 0; i < res.results.length; i++) {
-//             let recipe = res.results[i];
-//             let recipeDiv = document.createElement("div");
-//             recipeDiv.innerHTML = "<h1>" + recipe.title + "</h1><br><img src='" + res.baseUri + recipe.image + "' width='400'/><br> ready in " + recipe.readyInMinutes + " minutes" + "<br><a href='" + recipe.sourceUrl +"'>Link to recipe</a>";
-//             document.getElementById("output").appendChild(recipeDiv);
-//           }
-//         }
-//       });
-//     });
-// });
-
-
-// $(document).ready(searchBtn.addEventListener('click', function getRecipe(query) {
-    
-//     console.log("button clicked");
-
-//     $.ajax({
-//         url: "https://api.spoonacular.com/recipes/search?apiKey=d03a24375b30427a863ee13274b2ca29&number=6&query=" + query,
-//         success: function(res) {
-//             // Clear the output element
-//              document.getElementById("output").innerHTML = "";
-             
-//              // Loop through the results and create a div for each recipe
-//              for (let i = 0; i < res.results.length; i++) {
-//                 let recipe = res.results[i];
-//                 let recipeDiv = document.createElement("div");
-//                 recipeDiv.innerHTML = "<h1>" + recipe.title + "</h1><br><img src='" + res.baseUri + recipe.image + "' width='400'/><br> ready in " + recipe.readyInMinutes + " minutes" + "<br><a href='" + recipe.sourceUrl +"'>Link to recipe</a>";
-//                 document.getElementById("output").appendChild(recipeDiv);
-//             }
-//         }
-// });
-// }))
-
-
-// function getrecepe(query){
-//     $.ajax({
-//         url:"https://api.spoonacular.com/recipes/search?apiKey=d03a24375b30427a863ee13274b2ca29&number=1&query="+query,
-//         success: function(res){
-//                 document.getElementById("output").innerHTML ="<h1>"+res.results[0].title+"</h1><br><img src='"+res.baseUri+res.results[0].image+"'width='400'/><br> ready in "+res.results[0].readyInMinutes+" minutes"+"<br><a href='"+res.results[0].sourceUrl+"'>Link to recipe</a>";
-//         }
-//     })
-// }
 
 // / get meal list that matches with the ingredients
 function getRecipes() {
@@ -120,8 +41,30 @@ function getRecipes() {
         }
 
         mealList.innerHTML = html;
-    })
+        
+        localStorage.setItem("searchResults", JSON.stringify(data.results));
+        
+        // Retrieve the search results from local storage and parse them as JSON
+        const searchResults = JSON.parse(localStorage.getItem("searchResults"));
+        
+// Display the search results on the page
+displaySearchResults(searchResults);
+});
 }
+
+// Function to display the search results on the page
+function displaySearchResults(results) {
+  // Clear the existing search results
+  document.getElementById("search-results").innerHTML = "";
+
+  // Loop through the array of search results and add them to the page
+  for (let i = 0; i < results.length; i++) {
+    let result = results[i];
+    // Add the search result to the page
+  }
+}
+
+
 
 function openModalAndShowData(modalid, apiUrl) {
     // Get a reference to the modal element
@@ -142,8 +85,8 @@ function openModalAndShowData(modalid, apiUrl) {
     
         // Append the data to the data container
         weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${data.main.temp}</p>`;
-      });
-  }
+     });
+}
   
-  openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
-  
+openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
+
