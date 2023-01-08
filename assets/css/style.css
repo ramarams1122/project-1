@@ -4,3 +4,19 @@
     font-size: 20px;
 }
 
+.meal-img img{
+    width: 100%;
+    display: block;
+}
+
+.search-btn{
+    background: black;
+    background-color: aqua;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 50px;
+    margin: 1rem;
+    border-radius: 2rem;
+}
