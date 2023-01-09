@@ -7,6 +7,21 @@
 }
 
 :root{
+    --tenne-tawny: #77ff87;
+    --tenne-tawny-dark: #62ee8e;
+}
+
+.header {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color:#fff;
+    /* font-size: 1rem; */
+    } 
+    
+.image{
+        background-image:url(/project-1/assets/img/cooking-banner-g6441d4f97_1920.jpg);
+    }   
 
 .open-modal {
     justify-content: right;
