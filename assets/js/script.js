@@ -11,7 +11,9 @@ function getRecipes() {
   .then(response=>response.json())
   .then(data => {
     let html = " ";
-    if(data.results){
+    if(data.results.length > 0){
+        console.log(2);
+        console.log(data.results);
       data.results.forEach(results => {
         html += `
         <div class="meal-item" data-id = "${results.id}">
@@ -33,22 +35,25 @@ function getRecipes() {
          </div>
         </div>
         `;
-      });
+        });
       mealList.classList.remove('notFound');
-    } else{
-      html = "Sorry, we didn't find any meal!";
-      mealList.classList.add('notFound');
+
+      mealList.innerHTML = html;
+    
+      localStorage.setItem("searchResults", JSON.stringify(data.results));
+      
+      // Retrieve the search results from local storage and parse them as JSON
+      const searchResults = JSON.parse(localStorage.getItem("searchResults"));
+      
+      // Display the search results on the page
+      displaySearchResults(searchResults);
+
+    } else {
+        console.log(data.results);
+        html = "Sorry, we didn't find any meal!";
+        mealList.classList.add('notFound');
+        mealList.innerHTML = html;
     }
-    
-    mealList.innerHTML = html;
-    
-    localStorage.setItem("searchResults", JSON.stringify(data.results));
-    
-    // Retrieve the search results from local storage and parse them as JSON
-    const searchResults = JSON.parse(localStorage.getItem("searchResults"));
-    
-    // Display the search results on the page
-    displaySearchResults(searchResults);
   });
 }
 

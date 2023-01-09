@@ -96,6 +96,13 @@ h2 {
     background: var(--tenne-tawny-dark);
 }
 
+.notFound{
+    grid-template-columns: 1fr!important;
+    font-size: 1.8rem;
+    color: red;
+    font-weight: 600;
+    width: 100%;
+}
 
 /* .search-btn{
     background: black;
