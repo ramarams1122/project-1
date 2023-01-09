@@ -27,7 +27,7 @@ function getRecipes() {
          <div class="meal-name">
            <h3>Time: ${results.readyInMinutes} minutes</h3>
          </div>
-         <div class=class="meal-numPeople">
+         <div class="meal-numPeople">
            <h3>No.serving: ${results.servings}</h3>
          </div>
          <div class="meal-link" >
