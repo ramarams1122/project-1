@@ -15,15 +15,44 @@
 }
 
 .header {
-    display: flexbox;
+    display: flex;
     padding-top: 20px;
     padding-bottom: 15px;
     background-color: #69fd84;
+    
     /* font-size: 1rem; */
-    }    
+    } 
+    
+.open-modal {
+    justify-content: right;
+    margin-left: 57%;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
 .title1 {
+    padding-left: 2%;
     font-size: 2.5rem;
     margin-bottom: 10px;
+
     }
 
 .title {
