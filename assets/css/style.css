@@ -9,17 +9,20 @@
 }
 
 :root{
-    --tenne-tawny: #77ff87;
-    --tenne-tawny-dark: #62ee8e;
+    --tenne-tawny: #0836ee;
+    --tenne-tawny-dark: #0836ee;
     /* font-size: 10px; */
+}
+
+.image{
+    background-image:url(/project-1/assets/img/cooking-banner-g6441d4f97_1920.jpg)
 }
 
 .header {
     display: flex;
     padding-top: 20px;
     padding-bottom: 15px;
-    background-color: #69fd84;
-    
+    color:#fff;
     /* font-size: 1rem; */
     } 
     
@@ -33,17 +36,17 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #0836ee;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #3e8e41}
+.button:hover {background-color: #ffffff}
 
 .button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  background-color: #03159e;
+  box-shadow: 0 5px rgb(7, 0, 0);
   transform: translateY(4px);
 }
 
@@ -64,7 +67,6 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-    background: #fff;
     text-align: center;
 }
 
