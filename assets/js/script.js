@@ -93,8 +93,7 @@ displaySearchResults(searchResults);
 
 var weatherButtonEl = document.querySelector('#weather-btn');
 
-weatherButtonEl.addEventListener('click', function(event) {
-  
+weatherButtonEl.addEventListener('click', function() {
   modal.style.display = 'block'; 
   
 });
@@ -105,7 +104,7 @@ function openModalAndShowData(modalId, apiUrl) {
   modal = document.getElementById(modalId);
 
   // Show the modal
-  modal.style.display = "block";
+  modal.style.display = "none";
 
   // Get the data from the API
   fetch(apiUrl)
@@ -120,9 +119,10 @@ function openModalAndShowData(modalId, apiUrl) {
 
       // Convert the temperature from kelvin to degrees Celsius
       var tempInCelsius = data.main.temp - 273.15;
+      var tempInCelsiusRounded = tempInCelsius.toFixed(1);
 
       // Append the data to the data container
-      weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p>Temperature: ${tempInCelsius}</C>`;;
+      weatherContainer.innerHTML = `<p>Description: ${data.weather[0].description}</p><p> Temperature: ${tempInCelsiusRounded }\u00B0C</p>`;
    });
 }
       
