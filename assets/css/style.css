@@ -7,17 +7,7 @@
 }
 
 :root{
-    --tenne-tawny: #77ff87;
-    --tenne-tawny-dark: #77ff87;
-}
 
-.header {
-    display: flexbox;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    background-color: #69fd84;
-    }
-    
 .open-modal {
     justify-content: right;
     margin-left: 57%;
@@ -28,11 +18,12 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #0836ee;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
+
 
 .title1 {
     font-size: 2.5rem;
@@ -106,7 +97,6 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-    background: #fff;
     text-align: center;
 }
 
