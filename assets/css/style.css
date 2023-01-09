@@ -20,7 +20,7 @@
     } 
     
 .image{
-        background-image:url(/assets/img/cooking-banner-g6441d4f97_1920.jpg);
+        background-image:url(/project-1/assets/img/cooking-banner-g6441d4f97_1920.jpg);
     }   
 
 .open-modal {
@@ -91,14 +91,37 @@
     
 }
 
+.search-results {
+    display: flex;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem; 
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+    width: 35%;
+    margin-left: 33%; 
+  
+}
+
+.search-results, h3{
+    padding: 1.5rem 0.5rem;
+    text-align: center; 
+
+}
+
+.meal-numPeople, h3{
+    font-size: 1.4rem;
+
+}
+
 .meal-name{
     padding: 1.5rem 0.5rem;
 }
 .meal-name h3{
-    font-size: 1.4rem;
-}
-
-.meal-numPeople h3{
     font-size: 1.4rem;
 }
 
@@ -160,6 +183,25 @@ h2 {
 .search-control::placeholder{
     color: #000;
 }
+
+.search-results button {
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #0836ee;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+}
+
+.search-results p {
+    font-size: 1.75rem;
+}
+
 .search-btn{
     width: 55px;
     height: 55px;
@@ -203,6 +245,8 @@ h2 {
 
 .footer {
     display: flex;
+    justify-content: center;
+    margin-left: 20%;
     padding-top: 10px;
     padding-bottom: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
