@@ -4,24 +4,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: "Helvetica" , "Arial", "sans-serif", "Times New Roman";
-    font-size: 20px; */
 }
 
 :root{
     --tenne-tawny: #77ff87;
-    --tenne-tawny-dark: #62ee8e;
-    /* font-size: 10px; */
+    --tenne-tawny-dark: #77ff87;
 }
 
 .header {
-    display: flex;
+    display: flexbox;
     padding-top: 20px;
     padding-bottom: 15px;
     background-color: #69fd84;
-    
-    /* font-size: 1rem; */
-    } 
+    }
     
 .open-modal {
     justify-content: right;
@@ -39,26 +34,73 @@
     box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #3e8e41}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-
 .title1 {
-    padding-left: 2%;
     font-size: 2.5rem;
     margin-bottom: 10px;
-
     }
 
 .title {
     font-size: 2rem;
     margin-bottom: 10px;
     }
+
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+
+.meal-search{
+    margin: 2rem 0;
+}
+
+.search-control,
+.search-btn{
+    width: 100%;
+}
+
+.meal-result{
+    margin-top: 4rem;
+}
+#meal{
+    margin: 2.4rem 0;
+}
+.meal-item{
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+}
+
+.meal-name{
+    padding: 1.5rem 0.5rem;
+}
+.meal-name h3{
+    font-size: 1.4rem;
+}
+
+
+.meal-link{
+    margin: 1.4rem 0;
+}
+.meal-link a{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+.meal-link a:hover{
+    opacity: 0.8;
+}
 
 .meal-wrapper {
     max-width: 1280px;
@@ -89,10 +131,6 @@ h2 {
     display: block;
 }
 
-.search-control,
-.search-btn{
-    width: 100%;
-}
 .search-control{
     padding: 0 1rem;
     font-size: 1.1rem;
@@ -133,18 +171,6 @@ h2 {
     width: 100%;
 }
 
-/* .search-btn{
-    background: black;
-    background-color: aqua;
-    font-weight: 500;
-    font-size: 1.1rem;
-    padding: 0.75rem 0;
-    display: block;
-    width: 50px;
-    margin: 1rem;
-    border-radius: 2rem;
-} */
-
 .footer {
     display: flexbox;
     padding-top: 10px;
@@ -155,8 +181,7 @@ h2 {
 }
 .footer div ol li {
     display: inline-flex;
-    /* justify-content: space-between; */
-    margin-right: 300px;
+     margin-right: 300px;
 }
 
 /* Media Queries */
