@@ -1,6 +1,6 @@
 const searchBtn = document.getElementById('search-btn');
 const mealList = document.getElementById('meal');
-
+let searchKey;
 searchBtn.addEventListener('click', getRecipes);
 
 // / get meal list that matches with the ingredients
@@ -39,14 +39,18 @@ function getRecipes() {
       mealList.classList.remove('notFound');
 
       mealList.innerHTML = html;
-    
-      localStorage.setItem("searchResults", JSON.stringify(data.results));
       
-      // Retrieve the search results from local storage and parse them as JSON
-      const searchResults = JSON.parse(localStorage.getItem("searchResults"));
-      
+      // Create a new array for the search results
+      let searchResults = data.results;
+
+      // Generate a unique key for the search results
+      let searchKey = Date.now();
+
+      // Save the search results to local storage using the unique key
+      localStorage.setItem(searchKey, JSON.stringify(searchResults));
+
       // Display the search results on the page
-      displaySearchResults(searchResults);
+      displayLastSearchResult(searchResults);
 
     } else {
         console.log(data.results);
@@ -57,12 +61,25 @@ function getRecipes() {
   });
 }
 
-function displaySearchResults(results) {
-  // Clear the existing search results
-  document.getElementById("search-results").innerHTML = "";
+function displayLastSearchResult() {
+  // Retrieve the keys for the saved searches from local storage
+  let searchKeys = Object.keys(localStorage);
 
-  // Get the first result
-  let result = results[0];
+  // Sort the searchKeys array in descending order
+  searchKeys.sort((a, b) => b - a);
+
+  // Get the three most recent search keys
+  let recentSearchKeys = searchKeys.slice(0, 3);
+
+  // Retrieve the search results for the first key in the recentSearchKeys array
+  let searchResults;
+  if (localStorage.getItem(recentSearchKeys[0]) !== null && localStorage.getItem(recentSearchKeys[0]) !== undefined) {
+    searchResults = JSON.parse(localStorage.getItem(recentSearchKeys[0]));
+  } else {
+    searchResults = null;
+  }
+  // Get the first result from the search results
+  let result = searchResults[0];
 
   // Create a new element to hold the search result
   let resultElement = document.createElement("div");
@@ -81,23 +98,15 @@ function displaySearchResults(results) {
   document.getElementById("search-results").appendChild(resultElement);
 }
 
-// Retrieve the search results from local storage and parse them as JSON
-const searchResults = JSON.parse(localStorage.getItem("searchResults"));
-
 // Display the search results on the page
-displaySearchResults(searchResults);
-
-
-// openModalAndShowData("weatherModal", "https://api.openweathermap.org/data/2.5/weather?appid=87958847951be2c7b9a53baa9876f938&q=Sydney");
+displayLastSearchResult();
 
 
 var weatherButtonEl = document.querySelector('#weather-btn');
 
 weatherButtonEl.addEventListener('click', function() {
-  modal.style.display = 'block'; 
-  
+  modal.style.display = 'block';  
 });
-
 
 function openModalAndShowData(modalId, apiUrl) {
   // Get a reference to the modal element
