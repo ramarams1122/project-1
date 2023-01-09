@@ -30,8 +30,8 @@ function getRecipes() {
          <div class=class="meal-numPeople">
            <h3>No.serving: ${results.servings}</h3>
          </div>
-         <div class="meal-link">
-           <button onclick="window.open('${results.sourceUrl}', '_blank');">Get Recipe</button>
+         <div class="meal-link" >
+           <button id="recipe-btn" onclick="window.open('${results.sourceUrl}', '_blank');">Get Recipe</button>
          </div>
         </div>
         `;
