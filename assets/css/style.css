@@ -246,17 +246,23 @@ h2 {
 .footer {
     display: flex;
     justify-content: center;
-    margin-left: 20%;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    font-size: 1.1rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.3rem;
+    background-color:rgb(96, 97, 112);
 }
 
 .footer div ol li {
     display: inline-flex;
-     margin-right: 300px;
+    margin: 30px 50px 30px 50px;
 }
+
+.footer div ol li a {
+    color: white;
+}
+
+/* To remove the underline */
+a:link {text-decoration: none;}
 
 /* Media Queries */
 @media screen and (min-width: 600px){
