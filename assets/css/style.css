@@ -72,9 +72,7 @@
     width: 100%;
 }
 
-.meal-result{
-    /* margin-top: 4rem;*/
-} 
+
 #meal{
     margin: 2.4rem 0;
 }
@@ -143,7 +141,7 @@
 }
 
 .meal-wrapper {
-    max-width: 1280px;
+    max-width: 80rem;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
@@ -292,3 +290,11 @@ a:link {text-decoration: none;}
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+@media (min-width:20rem)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:22.5rem) {}
+@media (min-width:30rem)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:37.5rem)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:50.0625rem)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:64.0625rem) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:80.0625rem) { /* hi-res laptops and desktops */ }  
