@@ -29,4 +29,4 @@ N/A
 
 ## Depoyment
 
-[This is an external link to the live site jordannotavailable.github.io/project-1/](https://jordannotavailable.github.io/project-1/)
+[This is an external link to the live site ramarams1122.github.io/project-1] (https://ramarams1122.github.io/project-1/)
