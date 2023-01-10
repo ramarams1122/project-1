@@ -12,8 +12,6 @@ function getRecipes() {
   .then(data => {
     let html = " ";
     if(data.results.length > 0){
-        console.log(2);
-        console.log(data.results);
       data.results.forEach(results => {
         html += `
         <div class="meal-item" data-id = "${results.id}">
@@ -53,7 +51,6 @@ function getRecipes() {
       displayLastSearchResult(searchResults);
 
     } else {
-        console.log(data.results);
         html = "Sorry, we didn't find any meal!";
         mealList.classList.add('notFound');
         mealList.innerHTML = html;
@@ -87,6 +84,7 @@ function displayLastSearchResult() {
 
   // Add the search result to the element
   resultElement.innerHTML = `
+    <h2>Your Previous Search</h3>
     <h3>${result.title}</h3>
     <img src="https://spoonacular.com/recipeImages/${result.id}-480x360.jpg" alt="Food image">
     <p>Time: ${result.readyInMinutes} minutes</p>
